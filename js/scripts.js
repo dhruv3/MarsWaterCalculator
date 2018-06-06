@@ -7,6 +7,8 @@ var outputJSON;
 
 function runInput(){
   if(isInputValid()){
+    document.getElementById("textResult").innerHTML = "";
+    Plotly.purge("heatMap");
     calculateKLargest();
     displayTextResult();
     createHeatMap();
