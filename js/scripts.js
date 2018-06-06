@@ -17,9 +17,28 @@ function runInput(){
 }
 
 function createHeatMap(){
+  const data = [
+    {
+      z: calculatedInpArr,
+      type: 'heatmap'
+    }
+  ];
+  Plotly.plot('heatMap', data);
+  document.getElementById('heatMap').on('plotly_click', data => alert(`(${data.points[0].x} ,  ${data.points[0].y}  score: ${data.points[0].z}`));
 }
 
 function displayTextResult(){
+  let K = parseInt(arr[0]);
+  const currentDiv = document.getElementById("textResult");
+  let newDiv, newTextNode;
+  for(let i = 0; i < K; i++){
+    // create a new div element
+    newDiv = document.createElement("div");
+    newTextNode = document.createTextNode(`( ${outputJSON[i].x },   ${outputJSON[i].y}  score:  ${outputJSON[i].sum} )`);
+    newDiv.appendChild(newTextNode);
+    // add the newly created element and its content into the DOM
+    currentDiv.appendChild(newDiv);
+  }
 }
 
 function calculateKLargest(){

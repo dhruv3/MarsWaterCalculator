@@ -1,0 +1,21 @@
+.inputBox{
+  margin-top: 40px;
+}
+
+#runInput{
+  width: 150px;
+  margin: 20px auto;
+}
+
+#textResult{
+  text-align: center;
+  font-size: 20px;
+}
+
+#heatmapHeading{
+  text-align: center;
+}
+
+#textResHeading{
+  text-align: center;
+}
